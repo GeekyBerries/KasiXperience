@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="za.connectgau.com.kasixperience.Profile">
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="91dp"
+        android:layout_height="92dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteX="277dp"
+        tools:layout_editor_absoluteY="327dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="87dp"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="John Doe"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="47dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/screen_background_light_transparent"
+        app:srcCompat="@android:drawable/ic_menu_save"
+        tools:layout_editor_absoluteX="336dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="79dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Following"
+        tools:layout_editor_absoluteX="239dp"
+        tools:layout_editor_absoluteY="79dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Followers"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="79dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="79dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FOOD"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="151dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EVENTS"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="296dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="93dp"
+        android:layout_height="93dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="327dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="96dp"
+        android:layout_height="93dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="327dp" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="96dp"
+        android:layout_height="93dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="186dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="93dp"
+        android:layout_height="93dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="186dp" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="91dp"
+        android:layout_height="92dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteX="277dp"
+        tools:layout_editor_absoluteY="186dp" />
+</android.support.constraint.ConstraintLayout>
