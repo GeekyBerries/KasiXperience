@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "996505004777",
+    "firebase_url": "https://kasixperience.firebaseio.com",
+    "project_id": "kasixperience",
+    "storage_bucket": "kasixperience.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996505004777:android:5d852c4edf488761",
+        "android_client_info": {
+          "package_name": "za.connectgau.com.kasixperience"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996505004777-q808d9nuqhfe9rt6dkjtur2dip7kvafg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "za.connectgau.com.kasixperience",
+            "certificate_hash": "3631cbda13804190629593c45d8da687ac3a2c4f"
+          }
+        },
+        {
+          "client_id": "996505004777-d85hsltcs6um1hac3qmf9onhug9mqi78.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOb1uZUg2VGhXGkUpy-zB0JbVAaJFTzD8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996505004777-d85hsltcs6um1hac3qmf9onhug9mqi78.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
