@@ -1,108 +1,151 @@
 package za.connectgau.com.kasixperience;
 
-import android.content.Context;
-import android.net.Uri;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.places.PlacesGraphSDKHelper;
+import com.example.places.R;
+import com.example.places.adapters.PlaceListAdapter;
+import com.example.places.model.CurrentPlaceResult;
+import com.example.places.model.Place;
+import com.facebook.GraphResponse;
+import com.facebook.places.PlaceManager;
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link CurrentPlaceDialogFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link CurrentPlaceDialogFragment#newInstance} factory method to
- * create an instance of this fragment.
- *
+ * This dialog fragment illustrates how to:
+ * <ul>
+ *   <li>Fetch a collection of current place candidates where the user might be located.</li>
+ *   <li>Display a list of current place candidates.</li>
+ *   <li>Provide feedback about the current place estimate.</li>
+ * </ul>
  */
-public class CurrentPlaceDialogFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class CurrentPlaceDialogFragment extends DialogFragment implements
+        PlaceListAdapter.Listener {
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    public static final String EXTRA_CURRENT_PLACE = "current_place";
 
-    private OnFragmentInteractionListener mListener;
+    private RecyclerView recyclerView;
+    private View loadingView;
+    private CurrentPlaceResult currentPlaceResult;
+    private CurrentPlaceRequestListener currentPlaceRequestListener
+            = new CurrentPlaceRequestListener();
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CurrentPlaceDialogFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CurrentPlaceDialogFragment newInstance(String param1, String param2) {
-        CurrentPlaceDialogFragment fragment = new CurrentPlaceDialogFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-    public CurrentPlaceDialogFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_current_place_dialog, container, false);
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+    public static CurrentPlaceDialogFragment newInstance() {
+        return new CurrentPlaceDialogFragment();
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+        currentPlaceRequestListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+    public View onCreateView(
+            LayoutInflater inflater,
+            @Nullable ViewGroup container,
+            Bundle savedInstanceState) {
+        getDialog().setTitle(getString(R.string.current_place));
+        return inflater.inflate(R.layout.current_place_fragment, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.current_place_recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        loadingView = view.findViewById(R.id.current_place_loading_container);
+
+        getCurrentPlace();
+    }
+
+    private void getCurrentPlace() {
+        PlacesGraphSDKHelper.getCurrentPlace(currentPlaceRequestListener);
+    }
+
+    @Override
+    public void onPlaceSelected(Place place) {
+
+        // Provides feedback to the Places Graph once the user confirms presence at
+        // a place. This feedback helps Facebook improve the accuracy of current place estimates.
+        PlacesGraphSDKHelper.provideCurrentPlaceFeedback(
+                currentPlaceResult,
+                place,
+                true);
+
+        Intent data = new Intent();
+        data.putExtra(EXTRA_CURRENT_PLACE, place);
+
+        getTargetFragment().onActivityResult(
+                getTargetRequestCode(),
+                Activity.RESULT_OK,
+                data);
+
+        dismiss();
+    }
+
+    private void refreshCurrentPlaceList(CurrentPlaceResult result) {
+        currentPlaceResult = result;
+
+        PlaceListAdapter adapter = new PlaceListAdapter(
+                R.layout.current_place_list_item,
+                result.getPlaces(),
+                this);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setVisibility(View.VISIBLE);
+        loadingView.setVisibility(View.GONE);
+    }
+
+    private class CurrentPlaceRequestListener
+            implements PlacesGraphSDKHelper.CurrentPlaceRequestListener {
+
+        @Override
+        public void onCurrentPlaceResult(
+                @Nullable final CurrentPlaceResult result,
+                final GraphResponse response) {
+
+            if (isAdded()) {
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (result == null) {
+                            Toast.makeText(
+                                    getActivity(),
+                                    R.string.error,
+                                    Toast.LENGTH_SHORT).show();
+                            dismiss();
+                        } else {
+                            refreshCurrentPlaceList(result);
+                        }
+                    }
+                });
+            }
+        }
+
+        @Override
+        public void onLocationError(PlaceManager.LocationError error) {
+            if (isAdded()) {
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(
+                                getActivity(),
+                                R.string.location_error_unknown,
+                                Toast.LENGTH_SHORT).show();
+                        dismiss();
+                    }
+                });
+            }
+        }
     }
 }
