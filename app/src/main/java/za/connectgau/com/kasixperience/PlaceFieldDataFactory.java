@@ -22,8 +22,8 @@ package za.connectgau.com.kasixperience;
 
 import android.content.Context;
 
-import com.example.places.model.Place;
-import com.example.places.model.PlaceTextUtils;
+//import com.example.places.model.Place;
+//import com.example.places.model.PlaceTextUtils;
 
 public class PlaceFieldDataFactory {
 

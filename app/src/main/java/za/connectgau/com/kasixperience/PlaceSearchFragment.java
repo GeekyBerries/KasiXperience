@@ -24,13 +24,15 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.places.R;
-import com.example.places.adapters.PlaceListAdapter;
-import com.example.places.model.Place;
-import com.example.places.PlacesGraphSDKHelper;
-import com.example.places.model.PlaceTextUtils;
+//import com.example.places.R;
+//import com.example.places.adapters.PlaceListAdapter;
+//import com.example.places.model.Place;
+//import com.example.places.PlacesGraphSDKHelper;
+//import com.example.places.model.PlaceTextUtils;
 import com.facebook.GraphResponse;
 import com.facebook.places.PlaceManager;
+
+
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
