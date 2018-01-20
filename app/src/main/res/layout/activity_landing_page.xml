@@ -7,7 +7,7 @@
     tools:context="za.connectgau.com.kasixperience.LandingPage">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView4"
         android:layout_width="147dp"
         android:layout_height="146dp"
         app:srcCompat="@drawable/ic_launcher_background"
@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteY="314dp" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imageView3"
         android:layout_width="147dp"
         android:layout_height="146dp"
         app:srcCompat="@drawable/ic_launcher_background"
@@ -23,7 +23,7 @@
         tools:layout_editor_absoluteY="314dp" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageView1"
         android:layout_width="147dp"
         android:layout_height="146dp"
         app:srcCompat="@drawable/ic_launcher_background"
@@ -39,7 +39,7 @@
         tools:layout_editor_absoluteY="120dp" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/profileButton"
         android:layout_width="52dp"
         android:layout_height="48dp"
         android:background="@android:drawable/screen_background_light_transparent"
@@ -48,13 +48,14 @@
         tools:layout_editor_absoluteY="56dp" />
 
     <SearchView
+        android:id="@+id/SearchView"
         android:layout_width="351dp"
         android:layout_height="46dp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="6dp" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/favouriteButton"
         android:layout_width="49dp"
         android:layout_height="50dp"
         android:background="@android:color/transparent"
@@ -63,7 +64,7 @@
         tools:layout_editor_absoluteY="56dp" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/categoryButton"
         android:layout_width="53dp"
         android:layout_height="51dp"
         android:background="@android:color/transparent"
@@ -72,7 +73,7 @@
         tools:layout_editor_absoluteY="56dp" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/locationButton"
         android:layout_width="52dp"
         android:layout_height="50dp"
         android:background="@android:drawable/screen_background_light_transparent"
@@ -81,7 +82,7 @@
         tools:layout_editor_absoluteY="56dp" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/likesButton"
         android:layout_width="52dp"
         android:layout_height="49dp"
         android:background="@android:drawable/screen_background_light_transparent"
