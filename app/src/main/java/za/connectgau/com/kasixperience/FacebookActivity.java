@@ -10,12 +10,11 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 
-import com.example.places.fragments.PlaceInfoFragment;
-import com.example.places.fragments.PlaceSearchFragment;
-import com.example.places.fragments.LoginFragment;
-import com.example.places.model.Place;
+//import com.example.places.fragments.PlaceInfoFragment;
+//import com.example.places.fragments.PlaceSearchFragment;
+//import com.example.places.fragments.LoginFragment;
+//import com.example.places.model.Place;
 import com.facebook.AccessToken;
 import com.facebook.FacebookSdk;
 
@@ -64,7 +63,7 @@ public class FacebookActivity extends AppCompatActivity implements LoginFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.activity_facebook);
 
         /**
          * You can use the Places Graph SDK with either a User Access Token, or a Client Token.
@@ -115,7 +114,7 @@ public class FacebookActivity extends AppCompatActivity implements LoginFragment
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     ActivityCompat.requestPermissions(
-                            MainActivity.this,
+                            FacebookActivity.this,
                             new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
                                     Manifest.permission.ACCESS_COARSE_LOCATION},
                             REQUEST_LOCATION);

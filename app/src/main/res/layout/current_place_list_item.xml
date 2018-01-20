@@ -18,10 +18,33 @@
     IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
-<resources>
-    <color name="primary">#3F51B5</color>
-    <color name="primary_dark">#303F9F</color>
-    <color name="accent">#FF4081</color>
-    <color name="white">#FFFFFF</color>
-    <color name="dark_text_color">#515151</color>
-</resources>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/place_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:padding="@dimen/cardview_padding"
+    android:foreground="?attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/place_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/dark_text_color"/>
+
+    <TextView
+        android:id="@+id/place_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/place_name"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="@dimen/body_text_size" />
+
+</LinearLayout>

@@ -19,9 +19,19 @@
     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 <resources>
-    <color name="primary">#3F51B5</color>
-    <color name="primary_dark">#303F9F</color>
-    <color name="accent">#FF4081</color>
-    <color name="white">#FFFFFF</color>
-    <color name="dark_text_color">#515151</color>
+    <dimen name="cards_margin">16dp</dimen>
+    <dimen name="search_resting_elevation">2dp</dimen>
+    <dimen name="search_scrolling_elevation">16dp</dimen>
+    <dimen name="cardview_padding">10dp</dimen>
+    <dimen name="action_button_margin">24dp</dimen>
+    <dimen name="toolbar_margin_start">16dp</dimen>
+    <dimen name="toolbar_margin_end">64dp</dimen>
+    <dimen name="toolbar_height">192dp</dimen>
+    <dimen name="place_list_margin_top">-16dp</dimen>
+    <dimen name="body_text_size">16sp</dimen>
+    <dimen name="current_place_confidence_text_size">12sp</dimen>
+    <dimen name="place_search_list_header_height">32dp</dimen>
+    <dimen name="place_detail_text_size">18sp</dimen>
+    <dimen name="place_detail_item_margin_vertical">5dp</dimen>
+    <dimen name="action_button_elevation">6dp</dimen>
 </resources>
