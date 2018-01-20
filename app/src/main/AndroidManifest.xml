@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PlacesTest" />
-        <activity android:name=".FacebookActivity"></activity>
+        <activity android:name=".FacebookActivity" />
+        <activity android:name=".TakeMeThere"></activity>
     </application>
 
 </manifest>
