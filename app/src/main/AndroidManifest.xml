@@ -22,7 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PlacesTest"></activity>
+        <activity android:name=".PlacesTest" />
+        <activity android:name=".FacebookActivity"></activity>
     </application>
 
 </manifest>
