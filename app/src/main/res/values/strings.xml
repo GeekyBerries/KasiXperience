@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">KasiXperience</string>
+    <string name="_501_views">501 Views</string>
+    <string name="_128_likes">128 Likes</string>
+    <string name="mama_zondi_sell_the_best_kota_in_zone_4_shoshanguve">Mama Zondi sell the best Kota in Zone 4, Shoshanguve</string>
+    <string name="categoryimage">categoryImage</string>
+    <string name="icondirections">iconDirections</string>
+    <string name="favourite_button">favourite_button</string>
+    <string name="category_button">category_button</string>
+    <string name="location_button">location_button</string>
+    <string name="profile_button">profile_button</string>
+    <string name="likes_button">likes_button</string>
+    <string name="image_view_4">image_view_4</string>
+    <string name="image_view_3">image_view_3</string>
+    <string name="image_view_1">image_view_1</string>
+    <string name="image_view_2">image_view_2</string>
 </resources>

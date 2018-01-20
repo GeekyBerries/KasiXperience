@@ -14,7 +14,7 @@
         android:layout_marginTop="88dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageFood3"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/ic_launcher_background" android:contentDescription="TODO"/>
 
     <ImageView
         android:id="@+id/ProfilePic"
@@ -33,9 +33,11 @@
         android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="userName"
         android:text="John Doe"
         tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="47dp" />
+        tools:layout_editor_absoluteY="47dp"
+        tools:text="John Doe" />
 
     <ImageButton
         android:id="@+id/imageSettings"
