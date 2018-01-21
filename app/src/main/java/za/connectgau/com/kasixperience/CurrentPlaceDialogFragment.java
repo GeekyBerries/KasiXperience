@@ -12,11 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.places.PlacesGraphSDKHelper;
-import com.example.places.R;
-import com.example.places.adapters.PlaceListAdapter;
-import com.example.places.model.CurrentPlaceResult;
-import com.example.places.model.Place;
+//import com.example.places.PlacesGraphSDKHelper;
+//import com.example.places.R;
+//import com.example.places.adapters.PlaceListAdapter;
+//import com.example.places.model.CurrentPlaceResult;
+//import com.example.places.model.Place;
 import com.facebook.GraphResponse;
 import com.facebook.places.PlaceManager;
 

@@ -28,9 +28,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.places.R;
-import com.example.places.model.Place;
-import com.example.places.model.PlaceTextUtils;
+//import com.example.places.R;
+//import com.example.places.model.Place;
+//import com.example.places.model.PlaceTextUtils;
 
 import java.util.List;
 

@@ -24,7 +24,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.telephony.PhoneNumberUtils;
 
-import com.example.places.model.Place;
+//import com.example.places.model.Place;
 
 public class PlaceFieldData {
 

@@ -24,7 +24,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.text.TextUtils;
 
-import com.example.places.R;
+//import com.example.places.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

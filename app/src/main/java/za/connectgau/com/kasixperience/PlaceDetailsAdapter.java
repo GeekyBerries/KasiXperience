@@ -27,8 +27,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.places.R;
-import com.example.places.utils.PlaceFieldData;
+//import com.example.places.R;
+//import com.example.places.utils.PlaceFieldData;
 
 import java.util.List;
 

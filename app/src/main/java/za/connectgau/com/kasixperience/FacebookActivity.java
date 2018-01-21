@@ -213,7 +213,7 @@ public class FacebookActivity extends AppCompatActivity implements LoginFragment
                 public void onClick(DialogInterface dialog, int which) {
                     callPhoneIntent = intent;
                     ActivityCompat.requestPermissions(
-                            MainActivity.this,
+                            FacebookActivity.this,
                             new String[]{Manifest.permission.CALL_PHONE},
                             REQUEST_CALL_PHONE);
                 }
