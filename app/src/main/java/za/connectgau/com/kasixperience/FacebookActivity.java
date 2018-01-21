@@ -48,7 +48,8 @@ public class FacebookActivity extends AppCompatActivity implements LoginFragment
      * the value of your app client token. You can find the client token value on the Developer
      * Portal page of your app, under the Advanced Settings section.
      */
-    private final AuthenticationType authenticationType = AuthenticationType.USER_TOKEN;
+    //private final AuthenticationType authenticationType = AuthenticationType.USER_TOKEN;
+    private final AuthenticationType authenticationType = AuthenticationType.CLIENT_TOKEN;
 
     /**
      * To use client token authentication, get your app client token from the developer

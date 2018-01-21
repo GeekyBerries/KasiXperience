@@ -28,8 +28,8 @@
     <string name="app_id">1839650616300326</string>
     <string name="fb_login_protocol_scheme">fb1839650616300326</string>
 
-    <string name="app_name">PlacesGraphSample</string>
-    <string name="facebook_app_name">PlacesGraphAndroidSample</string>
+    <string name="app_name">KasiXperience</string>
+    <string name="facebook_app_name">KasiXperience</string>
     <string name="cancelled">Cancelled</string>
     <string name="permission_not_granted">Unable to perform selected action because permissions were not granted.</string>
     <string name="ok">OK</string>
